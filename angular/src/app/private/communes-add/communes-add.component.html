@@ -1,0 +1,251 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Ajouter commune</h1>
+
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Informations Commune</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+
+                                <form [formGroup]="communesAddForm">
+                                  
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="IdCommune"> Id  </label>
+                                            <input type="text" formControlName="IdCommune" name="IdCommune" class="form-control"
+                                            id="exampleIdCommune">
+                                            <div *ngIf="IdCommune.touched && IdCommune.invalid" class="text-danger">
+                                                <div *ngIf="IdCommune.errors.required">
+                                                    <small>* Champs obligatoire</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="gouv"> Gouvernorat </label>
+                                            <select type="text" formControlName="gouv" name="gouv" class="form-control"
+                                                id="examplegouv">
+                                                
+                                                <option value="Ariana">Ariana</option>
+                                                <option value="Beja">Beja</option>
+                                                <option value="Ben Arous">Ben Arous</option>
+                                                <option value="Bizerte">Bizerte</option>
+                                                <option value="Gabes">Gabes</option>
+                                                <option value="Gafsa">Gafsa</option>
+                                                <option value="Jendouba">Jendouba</option>
+                                                <option value="Kairouan">Kairouan</option>
+                                                <option value="Kasserine">Kasserine</option>
+                                                <option value="Kebili">Kebili</option>
+                                                <option value="Le Kef">Le Kef</option>
+                                                <option value="Mahdia">Mahdia</option>
+                                                <option value="Manouba">Manouba</option>
+                                                <option value="Medenine">Medenine</option>
+                                                <option value="Monastir">Monastir</option>
+                                                <option value="Nabeul">Nabeul</option>
+                                                <option value="Sfax">Sfax</option>
+                                                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                                                <option value="Siliana">Siliana</option>
+                                                <option value="Sousse">Sousse</option>
+                                                <option value="Tataouine">Tataouine</option>
+                                                <option value="Tozeur">Tozeur</option>
+                                                <option value="Tunis">Tunis</option>
+                                                <option value="Zaghouan">Zaghouan</option>
+                                        </select>
+                                            <div *ngIf="gouv.touched && gouv.invalid" class="text-danger">
+                                                <div *ngIf="gouv.errors.required">
+                                                    <small>* Champs obligatoire</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="NomCommuneFR">Nom Commune FR</label>
+                                            <select formControlName="NomCommuneFR" name="NomCommuneFR"
+                                                class="form-control " id="exampleNomCommuneFR">
+
+                                                <option value="Sijoumi">Sijoumi</option>
+                                                <option value="Hrairia">Hrairia</option>
+                                                <option value="Ezzouhour">Ezzouhour</option>
+                                                <option value="Le Bardo">Le Bardo</option>
+                                                <option value="Beb Saadoun">Beb Saadoun</option>
+                                                <option value="El Omrane">El Omrane</option>
+                                                <option value="Bab el Asal">Bab el Asal</option>
+                                                <option value="Bab el Khadhra">Bab el Khadhra</option>
+                                                <option value="Bab Bhar">Bab Bhar</option>
+                                                <option value="Bab Alioua">Bab Alioua</option>
+                                                <option value="Rades">Rades</option>
+                                                <option value="Ezzahra">Ezzahra</option>
+                                                <option value="Boumhel">Boumhel</option>
+                                                <option value="Hammem Lenf">Hammem Lenf</option>
+                                                <option value="Cite el Khadhra">Cite el Khadhra</option>
+                                                <option value="El Menzah">El Menzah</option>
+                                                <option value="Lac de Tunis">Lac de Tunis</option>
+                                                <option value="El Marsa">El Marsa</option>
+                                                <option value="La Goulette">La Goulette</option>
+                                                <option value="Carthage">Carthage</option>
+                                                <option value="El Mornaguia">El Mornaguia</option>
+                                                <option value="El Battan">El Battan</option>
+                                                <option value="Tebourba">Tebourba</option>
+                                                <option value="Borj el Amri">Borj el Amri</option>
+                                                <option value="Oued Ellil">Oued Ellil</option>
+                                                <option value="Djedaida">Djedaida</option>
+                                                <option value="Manouba">Manouba</option>
+                                                <option value="Douar Hicher">Douar Hicher</option>
+
+                                            </select>
+                                            <div *ngIf="NomCommuneFR.touched && NomCommuneFR.invalid"
+                                                class="text-danger">
+                                                <div *ngIf="NomCommuneFR.errors.required">
+                                                    <small>* Champs obligatoire</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="NomCommuneAR">Nom Commune AR</label>
+                                            <select formControlName="NomCommuneAR" name="NomCommuneAR"
+                                                class="form-control " id="exampleNomCommuneAR">
+                                                <option value="السيجومي">السيجومي</option>
+                                               <option value="الحرايرية">الحرايرية</option>
+                                               <option value="الزهور">الزهور</option>
+                                               <option value="باردو"> باردو</option>
+                                               <option value="باب سعدون">باب سعدون</option>
+                                               <option value="العمران">العمران</option>
+                                               <option value="باب العسل">باب العسل</option>
+                                               <option value="باب الخضراء">باب الخضراء</option>
+                                               <option value="باب بحر">باب بحر</option>
+                                               <option value="باب عليوة">باب عليوة</option>
+                                               <option value="رادس">رادس</option>
+                                               <option value="الزهراء">الزهراء</option>
+                                               <option value="بومهل">بومهل</option>
+                                               <option value="حمام الانف">حمام الانف</option>
+                                               <option value="حي الخضراء">حي الخضراء</option>
+                                               <option value="المنزه">المنزه</option>
+                                               <option value="البحيرة">البحيرة</option>
+                                               <option value="المرسى">المرسى</option>
+                                               <option value=" حلق الوادي"> حلق الوادي</option>
+                                               <option value="قرطاج">قرطاج</option>
+                                               <option value=" المرناڨية"> المرناڨية</option>
+                                               <option value="  البطان">  البطان</option>
+                                               <option value="طبربة">طبربة</option>
+                                               <option value="برج العامري">برج العامري</option>
+                                               <option value="واد الليل  ">واد الليل</option>
+                                               <option value="الجديّدة">الجديّدة</option>
+                                               <option value="منوبة">منوبة</option>
+                                               <option value="دوار هيشر  ">دوار هيشر </option>
+
+                                            </select>
+                                            <div *ngIf="NomCommuneAR.touched && NomCommuneAR.invalid"
+                                                class="text-danger">
+                                                <div *ngIf="NomCommuneAR.errors.required">
+                                                    <small>* Champs obligatoire</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <button [disabled]="communesAddForm.invalid" type="button"
+                                                class="btn  btn-info" (click)="communesUser()">
+                                                <i class="fa fa-plus"></i> Ajouter
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir quitter votre session?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"> Sélectionnez «Déconnexion» ci-dessous si vous êtes prêt à quitter votre session en
+                cours.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-primary" routerLink="/signin">Deconnexion</a>
+            </div>
+        </div>
+    </div>
+</div>

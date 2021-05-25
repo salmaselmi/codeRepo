@@ -1,0 +1,40 @@
+<div class="container">
+    <alert type="success" *ngIf="isAlert" [dismissible]="true">
+        Image Saved Successfully
+    </alert>
+    <div class="row">
+        <div class="card my-3">
+            <img [src]="imgUrl" alt="" style="width: 200px;">
+            <div class="card-body">
+                <p>Upload Any image to see preview</p>
+                <span>
+                    <input [(ngModel)]="fileValue" id="file" type="file" class="form-control"
+                        (change)="onFileChange($event)">
+                </span>
+                <div class="mt-3">
+                    <button type="button" class="btn btn-primary" (click)="uploadToBackend()"
+                        [disabled]="!fileValue">upload To Backend</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="images">
+        <div class="card mb-3">
+            <ul class="list-group">
+                <li class="list-group-item row" *ngFor="let image of images">
+                    <span class="col-sm-1">
+                        {{image.id}}
+                    </span>
+                    <span>
+                        {{image.name}}
+                    </span>
+                    <span style="flex: 1 1 auto;"></span>
+                    <span style="float: right;">
+                        <img [src]="image.data" alt="" style="width: 300px;">
+                    </span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

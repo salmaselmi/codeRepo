@@ -1,0 +1,45 @@
+.pos{
+    height: 230px;
+    width: 250px;
+    margin-left: 270px;
+    padding-left: 5px;
+    border: 1px solid silver; 
+    margin-top: 70px;
+    
+  }
+ 
+  .proj{
+      width: 250px; 
+      margin-left: 60px;
+      margin-top: 70px;
+      border: 1px solid silver;
+  }
+ 
+  
+  .proj:hover{
+    border:2px solid rgba(2, 7, 51, 0.342);
+    
+  }
+  
+  .pos:hover{
+    border:2px solid rgba(2, 7, 51, 0.342);
+  }
+  small{
+    text-decoration: rgba(192, 192, 192, 0.397);
+    font-weight: 200;
+  } 
+  
+  .caption2{
+    margin-bottom:-66px ;
+    margin-left: 625px;
+    font-weight: bolder;
+    font-size: large;
+    color: rgb(11, 2, 61);
+  }
+  .caption1{
+    margin-bottom:-42px ;
+    margin-left: 290px;
+    font-weight: bolder;
+    font-size: large;
+    color: rgb(11, 2, 61);
+  }

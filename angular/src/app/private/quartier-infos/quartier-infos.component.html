@@ -1,0 +1,179 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Consulter quartier</h1>
+
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4" style="width: 40rem;margin-left: 70px;">
+                            <!-- Card Header - Dropdown -->
+
+                            <!-- Card Body -->
+                            <div class="card-body" *ngIf="quartier">
+
+                                   <form> 
+                                            <div class="card-body">
+                                               
+                                                <ul _ngcontent-tby-c26=""
+                                                    class="nav nav-tabs justify-content-start d-md-flex d-none"
+                                                    role="tablist">
+                                                    <li _ngcontent-tby-c26="" class="nav-item"><a _ngcontent-tby-c26=""
+                                                            class="nav-link active" id="ngb-tab-1" role="tab"
+                                                            style="background-color: rgb(3, 39, 80); color: white;">
+                                                            <div _ngcontent-tby-c26=""> INFORMATIONS quartier<div
+                                                                    _ngcontent-tby-c26="" class="material-border"></div>
+
+                                                            </div>
+                                                        </a></li>
+
+                                                </ul>
+                                                <div _ngcontent-tby-c27="" class="card-body">
+                                                    <div _ngcontent-tby-c27="" class="card-title d-md-none">
+                                                        Informations </div>
+                                                    <div _ngcontent-tby-c27=""
+                                                        class="p-3 d-flex flex-column flex-sm-row align-items-center">
+
+                                                        <div _ngcontent-tby-c27="" class="form-group p-2 col">
+                                                            <div _ngcontent-tby-c27="" class="block-text"><span
+                                                                    _ngcontent-tby-c27=""
+                                                                    class="text-secondary">Gouvernorat</span>
+                                                                <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                                        class="text-dark" style="color: black;text-transform: uppercase;font-weight:bold;"> {{quartier?.gouvernorat}}
+                                                                    </span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-tby-c27="" class="form-group p-2 col"  >
+                                                            <div _ngcontent-tby-c27="" class="block-text"><span
+                                                                    _ngcontent-tby-c27="" class="text-secondary">
+                                                                    Commune</span>
+                                                                <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                                        class="text-dark" style="color: black;text-transform: uppercase;font-weight:bold;"> {{quartier.Commune}} </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div _ngcontent-tby-c27=""
+                                                        class="p-3 d-flex flex-column flex-sm-row align-items-center">
+
+                                                        <div _ngcontent-tby-c27="" class="form-group p-2 col" >
+                                                            <div _ngcontent-tby-c27="" class="block-text"><span
+                                                                    _ngcontent-tby-c27="" class="text-secondary"> Id
+                                                                    quartier</span>
+                                                                <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                                        class="text-dark" style="color: black;text-transform: uppercase;font-weight:bold;"> {{quartier.IdQuartier}}  </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-tby-c27="" class="form-group p-2 col">
+                                                            <div _ngcontent-tby-c27="" class="block-text"><span
+                                                                    _ngcontent-tby-c27="" class="text-secondary"> Nom quartier</span>
+                                                                <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                                        class="text-dark" style="color: black;text-transform: uppercase;font-weight:bold;"> {{quartier.NomQuartier}}  </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div _ngcontent-tby-c27=""
+                                                        class="p-3 d-flex flex-column flex-sm-row align-items-center">
+                                                        <div _ngcontent-tby-c27="" class="form-group p-2 col">
+                                                            <div _ngcontent-tby-c27="" class="block-text"><span
+                                                                    _ngcontent-tby-c27="" class="text-secondary">
+                                                                    Latitude</span>
+                                                                <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                                        class="text-dark" style="color: black;text-transform: uppercase;font-weight:bold;"> {{quartier.lat}} </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-tby-c27=""
+                                                            class="p-3 d-flex flex-column flex-sm-row align-items-center"
+                                                            class="form-group p-2 col">
+                                                            <div _ngcontent-tby-c27="" class="block-text" ><span
+                                                                    _ngcontent-tby-c27="" class="text-secondary">
+                                                                    Longitude </span>
+                                                                <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                                        class="text-dark" style="color: black;text-transform: uppercase;font-weight:bold;"> {{quartier.long}} </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div _ngcontent-tby-c27="" class="form-group p-2 col"
+                                                        style="margin-left: 15px;">
+                                                        <div _ngcontent-tby-c27="" class="block-text"><span
+                                                                _ngcontent-tby-c27=""
+                                                                class="text-secondary">Image</span>
+                                                            <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                                    class="text-dark" style="color: rgb(0, 0, 0);text-transform: uppercase;font-weight:bold;"> 
+                                                                     <img [src]="quartier.img" height="200" > 
+                                                                     <!-- <img src="/assets/images/20 Mars.jpg" style="width: 350px; height: 200px;"> -->
+                                                                    </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                   </form>
+                            </div>
+                             <!-- End of Main Content -->
+       
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir quitter votre session?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"> Sélectionnez «Déconnexion» ci-dessous si vous êtes prêt à quitter votre session en
+                cours.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-primary" routerLink="/signin">Deconnexion</a>
+            </div>
+        </div>
+    </div>
+</div>

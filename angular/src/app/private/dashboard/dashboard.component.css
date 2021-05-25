@@ -1,0 +1,143 @@
+img{
+    height: 150px;
+    width: 180px;
+    margin-left: 140px;
+    margin-top: -190px;
+    
+}
+.fifi:hover{
+    border:1.5px solid rgba(4, 61, 44, 0.342);
+}
+.fifi{
+    border: 1px solid rgb(241, 220, 220);
+}
+.hoho{
+    margin-top: 165px;
+}
+.hel{
+    display: block;
+}
+.hell{
+    display: block;
+}
+p{
+    display: inline-block;
+    margin-right: 12px;
+}
+label{
+    color: black;
+}
+input{
+    border:1px solid silver;
+    border-radius: 2px;
+}
+.nous, .nouss, .nousss{
+    display: block;
+}
+.bac{
+    width: 10px;
+    height: 5px;
+}
+.nouss{
+    background-color: rgb(230, 225, 225);
+    
+}
+
+.mougou{
+    display: block;
+}
+.fai, .fais, .faiss{
+    display: block;
+}
+small{
+    text-decoration: rgba(248, 244, 244, 0.397);
+    font-weight: 200;
+}
+
+
+.card-footer > div {
+    padding: 15px;
+    text-align: center;
+}
+.card-profile {
+    text-align: center;
+    
+}
+.card-profile img {
+    height: 160px;
+    width: 160px;
+    padding-top: -7px;
+    margin-left: -11px;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid rgba(27, 25, 114, 0.096);
+}
+
+
+.card-footer > div i {
+    font-size: 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+    
+}
+.card-footer > div h6 {
+    font-size: 14px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.user_image{
+    margin-left: 10px;
+}
+
+.cover{
+    background: url('/assets/images/crisva.jpg') no-repeat center / cover;
+    margin-top: -30px;
+    height: 500px ;
+    opacity: 0.83; 
+    filter: blur(2px)  ;
+    position: relative;
+
+
+}
+
+.super{
+    position:absolute;
+    top:400px;
+    right:400px;
+    width:auto;
+    opacity: 1; 
+    filter: blur(0px);
+
+}
+
+
+.arriere{
+    background: linear-gradient(rgb(227, 239, 250) 10%, rgb(219, 234, 247) 80%);
+}
+.foot{
+    background: rgba(2, 33, 80, 0.952);
+}
+
+  
+  
+  
+   
+  
+.container{
+    padding:5%;
+}
+.container .img{
+    text-align:center;
+}
+.container .details{
+    border-left:3px solid #ded4da;
+}
+.container .details p{
+    font-size:15px;
+    font-weight:bold;
+} 

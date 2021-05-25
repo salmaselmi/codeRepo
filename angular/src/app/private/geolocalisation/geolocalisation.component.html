@@ -1,0 +1,114 @@
+ 
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div style="margin-left: 40px; color:rgb(3, 3, 77);">
+                <h2>Geolocalisation des projets:</h2>
+            </div>
+            <div class="container-fluid" style="margin-left: 90px;margin-top: 50px;">
+                <agm-map [latitude]="lat" [longitude]="long" [zoom]="6" (Click)="onChooseLocation($event)" style="width: 1000px; height: 600px; ">
+                    <agm-marker [latitude]="lat" [longitude]="long"></agm-marker> 
+                    <agm-marker [latitude]="latA" [longitude]="longA"></agm-marker>
+                    <agm-marker [latitude]="36.75333" [longitude]="10.2222" class="dropdown-item" class="btn btn-sm btn-danger" href="#"
+                    data-toggle="modal" data-target="#markerModal" (click)="marker(geolocalisation)"></agm-marker>
+                    <agm-marker [latitude]="36.80778" [longitude]="10.10111"></agm-marker>
+                    <agm-marker [latitude]="36.73333" [longitude]="36.73333"></agm-marker>
+                    <agm-marker [latitude]="36.08333" [longitude]="9.36667"></agm-marker>
+                </agm-map>
+                  
+        
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+
+
+
+
+                    <!-- Area Chart -->
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div> -->
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir quitter votre session?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body"> Sélectionnez «Déconnexion» ci-dessous si vous êtes prêt à quitter votre session
+                    en cours.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" routerLink="/signin">Deconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Marker Modal-->
+     <div class="modal fade" id="markerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">×</span>
+                 </button>
+             </div>
+             <div class="modal-body"> 
+                 <tr *ngFor="let project of geolocalisation">
+                    <th> <h6>Gouvernorat: </h6> </th>
+                
+                </div>
+              
+         </div>
+     </div>
+ </div>

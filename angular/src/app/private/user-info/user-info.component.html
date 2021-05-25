@@ -1,0 +1,176 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Consulter utilisateur</h1>
+
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4" style="width: 46rem;">
+                            <!-- Card Header - Dropdown -->
+
+                            <!-- Card Body -->
+                            <div class="card-body" *ngIf="user" >
+
+                                <form>
+
+                                    <ul _ngcontent-tby-c26=""
+                                        class="nav nav-tabs justify-content-start d-md-flex d-none" role="tablist">
+                                        <li _ngcontent-tby-c26="" class="nav-item"><a _ngcontent-tby-c26=""
+                                                class="nav-link active" id="ngb-tab-1" role="tab"
+                                                style="background-color: rgb(3, 39, 80); color: white;">
+                                                <div _ngcontent-tby-c26=""> DETAILS UTILISATEUR <div
+                                                        _ngcontent-tby-c26="" class="material-border"></div>
+                                                </div>
+                                            </a></li>
+
+                                    </ul>
+                                    <div _ngcontent-tby-c27="" class="card-body">
+                                        <div _ngcontent-tby-c27="" class="card-title d-md-none"> Informations </div>
+                                        <div _ngcontent-tby-c27=""
+                                            class="p-3 d-flex flex-column flex-sm-row align-items-center">
+                                            <div _ngcontent-tby-c27="" class="form-group p-2 col">
+                                                <div _ngcontent-tby-c27="" class="block-text"><i class="fad fa-user-tie" style="font-size: 1.5rem; color:  rgb(245, 180, 1);margin-left: -10px;"></i><span
+                                                        _ngcontent-tby-c27="" class="text-secondary" style="margin-left: 20px;">Nom</span>
+                                                    <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                            style="color: black; margin-left: 30px;text-transform: uppercase;"><b> {{user?.nom}} </b></span></div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tby-c27="" class="form-group p-2 col" style="margin-left: -10px;">
+                                                <div _ngcontent-tby-c27="" class="block-text"><i class="fad fa-user-tie" style="font-size: 1.5rem; color: rgb(245, 180, 1);margin-left: -10px;"></i><span
+                                                        _ngcontent-tby-c27="" class="text-secondary"style="margin-left: 15px;"> Prenom</span>
+                                                    <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                            style="margin-left: 30px; color: black;text-transform: uppercase;"><b> {{user.prenom}} </b> </span></div>
+                                                </div>
+                                            </div><br> 
+                                                
+                                                <div _ngcontent-tby-c27="" class="form-group p-2 col" >
+                                                    <div _ngcontent-tby-c27="" class="block-text"style="margin-left: -10px;"><i class="fas fa-at" style="font-size: 1.5rem; color: rgb(245, 180, 1);margin-left: -10px;"></i><span
+                                                            _ngcontent-tby-c27="" class="text-secondary" style="margin-left: 15px;">Email</span>
+                                                        <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                                style="margin-left: 30px;color: black;text-transform: uppercase;"> <b> {{user.email}} </b> </span></div>
+                                                    </div>
+                                                </div>
+                                        
+                                        </div>
+                                        <div _ngcontent-tby-c27=""
+                                            class="p-3 d-flex flex-column flex-sm-row align-items-center">
+                                            <div _ngcontent-tby-c27="" class="form-group p-2 col">
+                                                <div _ngcontent-tby-c27="" class="block-text"><i class="fas fa-unlock-alt" style="font-size: 1.5rem; color: rgb(245, 180, 1);margin-left: -10px;"></i><span
+                                                        _ngcontent-tby-c27="" class="text-secondary" style="margin-left: 15px;"> Mot de passe
+                                                    </span>
+                                                    <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                            style="color: black;margin-left: 30px;"> <b> {{user.password}} </b> </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div _ngcontent-tby-c27="" class="form-group p-2 col"
+                                            style="margin-left: 19px;">
+                                            <div _ngcontent-tby-c27="" class="block-text"><i class="fad fa-phone-volume" style="font-size: 1.5rem; color: rgb(245, 180, 1);margin-left: -10px;"></i><span _ngcontent-tby-c27=""
+                                                    class="text-secondary" style="margin-left: 20px;">Telephone</span>
+                                                <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                                        style="color: black;text-transform: uppercase;margin-left: 30px;"><b> {{user.phone}}</b> </span></div>
+                                            </div>
+                                        </div>
+                                        <div _ngcontent-tby-c27="" class="form-group p-2 col"
+                                            style="margin-left: 19px;">
+                                            <div _ngcontent-tby-c27="" class="block-text"><i class="fas fa-user-tag" style="font-size: 1.5rem; color: rgb(245, 180, 1);margin-left: -10px;"></i><span _ngcontent-tby-c27=""
+                                                    class="text-secondary" style="margin-left: 15px;"> Fonctionnalité </span>
+                                                <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27="" style="color: black;text-transform: uppercase;margin-left: 39px;"> <b>{{user.fonctionnalite}}</b> </span></div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                    </div>
+
+
+
+
+
+
+
+                                    <!---->
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir quitter votre session?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"> Sélectionnez «Déconnexion» ci-dessous si vous êtes prêt à quitter votre session en
+                cours.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-primary" routerLink="/signin">Deconnexion</a>
+            </div>
+        </div>
+    </div>
+</div>

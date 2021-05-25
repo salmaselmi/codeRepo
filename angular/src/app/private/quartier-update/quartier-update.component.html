@@ -1,0 +1,259 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Modifier Quartier</h1>
+
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4" style="margin-left: 40px; width: 50rem;">
+                            <!-- Card Header - Dropdown -->
+
+                            <!-- Card Body -->
+                            <div class="card-body">
+
+                                <form [formGroup]="quartierUpdateForm" (ngSubmit)="updateQuartier()">
+                                    <div class="form-group row">
+                                        <div class="col-md-6" style="margin-left: 50px;">
+                                            <label for="gouvernorat">Gouvernorat</label>
+                                            <select formControlName="gouvernorat" class="form-control "
+                                                id="examplegouvernorat" style="width: 19rem;">
+                                                <option value="Ariana">Ariana</option>
+                                                <option value="Beja">Beja</option>
+                                                <option value="Ben Arous">Ben Arous</option>
+                                                <option value="Bizerte">Bizerte</option>
+                                                <option value="Gabes">Gabes</option>
+                                                <option value="Gafsa">Gafsa</option>
+                                                <option value="Jendouba">Jendouba</option>
+                                                <option value="Kairouan">Kairouan</option>
+                                                <option value="Kasserine">Kasserine</option>
+                                                <option value="Kebili">Kebili</option>
+                                                <option value="Le Kef">Le Kef</option>
+                                                <option value="Mahdia">Mahdia</option>
+                                                <option value="Manouba">Manouba</option>
+                                                <option value="Medenine">Medenine</option>
+                                                <option value="Monastir">Monastir</option>
+                                                <option value="Nabeul">Nabeul</option>
+                                                <option value="Sfax">Sfax</option>
+                                                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                                                <option value="Siliana">Siliana</option>
+                                                <option value="Sousse">Sousse</option>
+                                                <option value="Tataouine">Tataouine</option>
+                                                <option value="Tozeur">Tozeur</option>
+                                                <option value="Tunis">Tunis</option>
+                                                <option value="Zaghouan">Zaghouan</option>
+
+                                            </select>
+                                            <div *ngIf="gouvernorat.touched && gouvernorat.invalid" class="text-danger">
+                                                <div *ngIf="gouvernorat.errors.required">
+                                                    <small>* Gouvernorat obligatoire</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6" style="margin-left: -50px;">
+                                            <label for="Commune">Commune</label>
+                                            <select formControlName="Commune" class="form-control " id="exampleCommune"
+                                                style="width: 19rem;">
+                                                <option value="Sidi Hsin">Sidi Hsin</option>
+                                                <option value="Sijoumi">Sijoumi</option>
+                                                <option value="Hrairia">Hrairia</option>
+                                                <option value="Ezzouhour">Ezzouhour</option>
+                                                <option value="Le Bardo">Le Bardo</option>
+                                                <option value="Beb Saadoun">Beb Saadoun</option>
+                                                <option value="El Omrane">El Omrane</option>
+                                                <option value="Bab el Asal">Bab el Asal</option>
+                                                <option value="Bab el Khadhra">Bab el Khadhra</option>
+                                                <option value="Bab Bhar">Bab Bhar</option>
+                                                <option value="Bab Alioua">Bab Alioua</option>
+                                                <option value="Rades">Rades</option>
+                                                <option value="Ezzahra">Ezzahra</option>
+                                                <option value="Boumhel">Boumhel</option>
+                                                <option value="Hammem Lenf">Hammem Lenf</option>
+                                                <option value="Cite el Khadhra">Cite el Khadhra</option>
+                                                <option value="El Menzah">El Menzah</option>
+                                                <option value="Lac de Tunis">Lac de Tunis</option>
+                                                <option value="El Marsa">El Marsa</option>
+                                                <option value="La Goulette">La Goulette</option>
+                                                <option value="Carthage">Carthage</option>
+                                                <option value="El Mornaguia">El Mornaguia</option>
+                                                <option value="El Battan">El Battan</option>
+                                                <option value="Tebourba">Tebourba</option>
+                                                <option value="Borj el Amri">Borj el Amri</option>
+                                                <option value="Oued Ellil">Oued Ellil</option>
+                                                <option value="Djedaida">Djedaida</option>
+                                                <option value="Manouba">Manouba</option>
+                                                <option value="Douar Hicher">Douar Hicher</option>
+
+                                            </select>
+                                            <div *ngIf="Commune.touched && Commune.invalid" class="text-danger">
+                                                <div *ngIf="Commune.errors.required">
+                                                    <small>* Commune obligatoire</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-6" style="margin-left: 50px;">
+                                            <label for="IdQuartier"> Id quartier </label>
+                                            <input type="text" formControlName="IdQuartier" class="form-control"
+                                                id="exampleIdQuartier" style="width: 19rem;">
+                                            <div *ngIf="IdQuartier.touched && IdQuartier.invalid" class="text-danger">
+                                                <div *ngIf="IdQuartier.errors.required">
+                                                    <small>* Id Quartier obligatoire</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" style="margin-left: -50px;">
+                                            <label for="NomQuartier">Nom Quartier</label>
+                                            <input type="text" formControlName="NomQuartier" class="form-control "
+                                                id="exampleNomQuartier" style="width: 19rem;">
+
+                                            <div *ngIf="NomQuartier.touched && NomQuartier.invalid" class="text-danger">
+                                                <div *ngIf="NomQuartier.errors.required">
+                                                    <small>* Nom Quartier obligatoire</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-6" style="margin-left: 50px;">
+                                            <label for="lat">Latitude </label>
+                                            <input type="text" formControlName="lat" class="form-control "
+                                                id="examplelat" style="width: 19rem;">
+                                            <div *ngIf="lat.touched && lat.invalid" class="text-danger">
+                                                <div *ngIf="lat.errors.required">
+                                                    <small>* Latitude Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6" style="margin-left: -50px;">
+                                            <label for="long">Longitude</label>
+                                            <input type="text" formControlName="long" class="form-control"
+                                               id="examplelong" style="width: 19rem;">
+                                            <div *ngIf="long.touched && long.invalid" class="text-danger">
+                                                <div *ngIf="long.errors.required">
+                                                    <small>* Longitude Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row" style="margin-left: 170px;">
+                                        <div class="col-md-6">
+                                            <label for="img">Image</label>
+                                            <input #file type="file"  accept="img/*" (change)="onFileChanged($event);preview(file.files)"  formControlName="img" class="form-control "
+                                                id="exampleimg" style="width: 20rem;height: 10rem; ">
+                                            <img [src]="imgURL"  style="width: 25rem;height: 14rem; margin-top: -160px;" *ngIf="imgURL">
+                                          <div *ngIf="img.touched && img.invalid" class="text-danger">
+                                                <div *ngIf="img.errors.required">
+                                                    <small>* Image Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                   
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0" >
+                                            <button [disabled]="quartierUpdateForm.invalid"  (click)="updateQuartier()" type="submit" class="btn  btn-info"  > 
+                                                 <i class="fa fa-plus"></i> Modifier
+                                             </button>
+                                         </div>
+                                     </div>  
+
+
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir quitter votre session?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"> Sélectionnez «Déconnexion» ci-dessous si vous êtes prêt à quitter votre session en
+                cours.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-primary" routerLink="/signin">Deconnexion</a>
+            </div>
+        </div>
+    </div>
+</div>

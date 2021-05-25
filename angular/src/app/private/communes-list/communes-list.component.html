@@ -1,0 +1,359 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Liste des communes</h1>
+                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+
+                    <!-- Pie Chart -->
+                    
+
+
+
+                    <!-- Area Chart -->
+                    <div class="col-xl-8 col-lg-7" >
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+
+                            <!-- Card Body2 -->
+                            <div class="card-body">
+
+
+                                <div class="card-body">
+                                    <h2 class="projetsTitre">Communes</h2><br>
+
+                                    <table class="table table-sm">
+                                        <thead  style="background-color: rgb(228, 238, 248); color: black;">
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Gouvernorat</th> 
+                                                <th>Nom commune FR</th>
+                                                <th>Nom commune AR</th> 
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                            <tr *ngFor="let commune of communesList">
+                                                <th>{{commune.IdCommune}}</th>
+                                                <th>{{commune.gouv}}</th>
+                                                <th>{{commune.NomCommuneFR}}</th>
+                                                <th>{{commune.NomCommuneAR}}</th>
+
+                                                <th>
+                                                    
+                                                    <button class="dropdown-item" href="#" data-toggle="modal" (click)="onViewClick(commune)"
+                                                    data-target="#oneModal" class="btn btn-sm btn-warning mx-3" 
+                                                        class="btn btn-sm btn-consult">
+                                                        <i class="fal fa-eye"></i>
+                                                    </button>
+                                 
+                                                    <button class="dropdown-item" href="#" data-toggle="modal" (click)="onViewClick(commune)"
+                                                        data-target="#updateModal" class="btn btn-sm btn-warning mx-3">
+                                                        <i class="fa fa-pen"></i>
+                                                    </button>
+
+                                                    <button class="dropdown-item" class="btn btn-sm btn-danger" href="#"
+                                                    data-toggle="modal" data-target="#deleteModal" (click)="deleteRow(commune)" > 
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </th>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+
+                                    <button routerLink="/communes/add" class="bouton btn btn-primary btn-sm my-3">
+                                        <i class="fa fa-plus"></i> Ajouter </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir quitter votre session?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body"> Sélectionnez «Déconnexion» ci-dessous si vous êtes prêt à quitter votre session
+                    en cours.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" routerLink="/signin">Deconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+<!-- Delete Modal-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir supprimer la commune?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="modal-body"> Sélectionnez «Supprimer» si vous souhaitez retirer cette commune</div>
+        <div class="modal-footer">
+            <button id="closeModalButton" data-toggle="modal"data-target="#deleteModal" class="btn btn-default"                          
+            data-dismiss="modal">Annuler</button>
+            <a class="btn btn-primary" routerLink="/communes/list" (click)="delete()">Supprimer</a>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!-- Update Modal-->
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Modifier Commune</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="IdCommune">Id: </label>
+                        <input type="text" id="exampleIdCommune" name="IdCommune" style="margin-left:137.5px; width:9rem; height: 1.55rem;"  [(ngModel)]=commune.IdCommune><br>
+                        
+                        <label for="gouv"> Gouvernorat:</label> 
+                        <select  id="examplegouv" name="gouv"  style="margin-left:62.5px;width:9rem;" [(ngModel)]=commune.gouv>
+                            
+                            <option value="Ariana">Ariana</option>
+                            <option value="Beja">Beja</option>
+                            <option value="Ben Arous">Ben Arous</option>
+                            <option value="Bizerte">Bizerte</option>
+                            <option value="Gabes">Gabes</option>
+                            <option value="Gafsa">Gafsa</option>
+                            <option value="Jendouba">Jendouba</option>
+                            <option value="Kairouan">Kairouan</option>
+                            <option value="Kasserine">Kasserine</option>
+                            <option value="Kebili">Kebili</option>
+                            <option value="Le Kef">Le Kef</option>
+                            <option value="Mahdia">Mahdia</option>
+                            <option value="Manouba">Manouba</option>
+                            <option value="Medenine">Medenine</option>
+                            <option value="Monastir">Monastir</option>
+                            <option value="Nabeul">Nabeul</option>
+                            <option value="Sfax">Sfax</option>
+                            <option value="Sidi Bouzid">Sidi Bouzid</option>
+                            <option value="Siliana">Siliana</option>
+                            <option value="Sousse">Sousse</option>
+                            <option value="Tataouine">Tataouine</option>
+                            <option value="Tozeur">Tozeur</option>
+                            <option value="Tunis">Tunis</option>
+                            <option value="Zaghouan">Zaghouan</option>
+                    </select><br>
+
+                        <label for="NomCommuneFR">Nom commune FR: </label>
+                        <select id="exampleNomCommuneFR" name="NomCommuneFR" style="margin-left:20px;width:9rem;"  [(ngModel)]=commune.NomCommuneFR>
+                            <option value="Sidi Hsin">Sidi Hsin</option>
+                            <option value="Sijoumi">Sijoumi</option>
+                            <option value="Hrairia">Hrairia</option>
+                            <option value="Ezzouhour">Ezzouhour</option>
+                            <option value="Le Bardo">Le Bardo</option>
+                            <option value="Beb Saadoun5">Beb Saadoun</option>
+                            <option value="El Omrane">El Omrane</option>
+                            <option value="Bab el Asal">Bab el Asal</option>
+                            <option value="Bab el Khadhra">Bab el Khadhra</option>
+                            <option value="Bab Bhar9">Bab Bhar</option>
+                            <option value="Bab Alioua">Bab Alioua</option>
+                            <option value="Rades">Rades</option>
+                            <option value="Ezzahra">Ezzahra</option>
+                            <option value="Boumhel">Boumhel</option>
+                            <option value="Hammem Lenf">Hammem Lenf</option>
+                            <option value="Cite el Khadhra">Cite el Khadhra</option>
+                            <option value="El Menzah">El Menzah</option>
+                            <option value="Lac de Tunis">Lac de Tunis</option>
+                            <option value="El Marsa">El Marsa</option>
+                            <option value="La Goulette">La Goulette</option>
+                            <option value="Carthage">Carthage</option>
+                            <option value="El Mornaguia">El Mornaguia</option>
+                            <option value="El Battan">El Battan</option>
+                            <option value="Tebourba">Tebourba</option>
+                            <option value="Borj el Amri">Borj el Amri</option>
+                            <option value="Oued Ellil">Oued Ellil</option>
+                            <option value="Djedaida">Djedaida</option>
+                            <option value="Manouba">Manouba</option>
+                            <option value="Douar Hicher">Douar Hicher</option>
+                        </select><br>
+
+                        <label for="NomCommuneAR">Nom commune AR: </label>
+                        <select id="exampleNomCommuneAR" name="NomCommuneAR" style="margin-left:18px;width:9rem;"  [(ngModel)]=commune.NomCommuneAR>
+                            <option value="Sidi Hsin">Sidi Hsin</option>
+                                               <option value="السيجومي">السيجومي</option>
+                                               <option value="الحرايرية">الحرايرية</option>
+                                               <option value="الزهور">الزهور</option>
+                                               <option value="باردو"> باردو</option>
+                                               <option value="باب سعدون">باب سعدون</option>
+                                               <option value="العمران">العمران</option>
+                                               <option value="باب العسل">باب العسل</option>
+                                               <option value="باب الخضراء">باب الخضراء</option>
+                                               <option value="باب بحر">باب بحر</option>
+                                               <option value="باب عليوة">باب عليوة</option>
+                                               <option value="رادس">رادس</option>
+                                               <option value="الزهراء">الزهراء</option>
+                                               <option value="بومهل">بومهل</option>
+                                               <option value="حمام الانف">حمام الانف</option>
+                                               <option value="حي الخضراء">حي الخضراء</option>
+                                               <option value="المنزه">المنزه</option>
+                                               <option value="البحيرة">البحيرة</option>
+                                               <option value="المرسى">المرسى</option>
+                                               <option value=" حلق الوادي"> حلق الوادي</option>
+                                               <option value="قرطاج">قرطاج</option>
+                                               <option value=" المرناڨية"> المرناڨية</option>
+                                               <option value="  البطان">  البطان</option>
+                                               <option value="طبربة">طبربة</option>
+                                               <option value="برج العامري">برج العامري</option>
+                                               <option value="واد الليل  ">واد الليل</option>
+                                               <option value="الجديّدة">الجديّدة</option>
+                                               <option value="منوبة">منوبة</option>
+                                               <option value="دوار هيشر  ">دوار هيشر </option>
+                             
+                        </select><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" routerLink="/communes/list">Modifier</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- one Modal-->
+     <div class="modal fade" id="oneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            
+             <div class="card-body"> 
+                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">×</span>
+                 </button>
+                 <ul _ngcontent-tby-c26="" class="nav nav-tabs justify-content-start d-md-flex d-none"
+                     role="tablist" >
+                     <li _ngcontent-tby-c26="" class="nav-item" ><a _ngcontent-tby-c26=""
+                             class="nav-link active" id="ngb-tab-1" role="tab" style="background-color: rgb(3, 39, 80); color: white;">
+                             <div _ngcontent-tby-c26="" >   INFORMATIONS Commune <div _ngcontent-tby-c26=""
+                                     class="material-border"></div>
+                                     
+                             </div>
+                         </a></li>
+                 
+                 </ul>
+                 <div _ngcontent-tby-c27="" class="card-body">
+                     <div _ngcontent-tby-c27="" class="card-title d-md-none"> Informations </div>
+                        <div _ngcontent-tby-c27=""
+                         class="p-3 d-flex flex-column flex-sm-row align-items-center">  
+                         
+                         <div _ngcontent-tby-c27="" class="form-group p-2 col">
+                             <div _ngcontent-tby-c27="" class="block-text"><span _ngcontent-tby-c27=""
+                                     class="text-secondary"> Id </span>
+                                 <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                         class="text-dark" style="text-transform: uppercase;font-weight:bold;"> {{commune?.IdCommune}} </span></div>
+                             </div>
+                         </div>
+                         <div _ngcontent-tby-c27="" class="form-group p-2 col">
+                             <div _ngcontent-tby-c27="" class="block-text"><span _ngcontent-tby-c27=""
+                                     class="text-secondary">Gouvernorat</span>
+                                 <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                         class="text-dark" style="text-transform: uppercase;font-weight:bold;"> {{commune?.gouv}} </span></div>
+                             </div>
+                         </div>
+                       
+                         </div>
+                         <div _ngcontent-tby-c27=""
+                         class="p-3 d-flex flex-column flex-sm-row align-items-center">
+                         <div _ngcontent-tby-c27="" class="form-group p-2 col">
+                             <div _ngcontent-tby-c27="" class="block-text"><span _ngcontent-tby-c27=""
+                                     class="text-secondary"> Nom commune FR</span>
+                                 <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                         class="text-dark" style="text-transform: uppercase;font-weight:bold;"> {{commune?.NomCommuneFR}} </span></div>
+                             </div>
+                         </div> 
+                         <div _ngcontent-tby-c27="" class="form-group p-2 col">
+                             <div _ngcontent-tby-c27="" class="block-text"><span _ngcontent-tby-c27=""
+                                     class="text-secondary"> Nom commune AR</span>
+                                 <div _ngcontent-tby-c27=""><span _ngcontent-tby-c27=""
+                                         class="text-dark" style="text-transform: uppercase;font-weight:bold;"> {{commune?.NomCommuneAR}} </span></div>
+                             </div>
+                         </div> 
+                     </div>  
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+    

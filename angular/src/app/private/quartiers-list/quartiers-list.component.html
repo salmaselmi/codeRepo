@@ -1,0 +1,180 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Liste des quartiers</h1>
+                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+
+                    <!-- Pie Chart -->
+
+
+
+
+                    <!-- Area Chart -->
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="card shadow mb-4" style="width: 50rem;">
+                            <!-- Card Header - Dropdown -->
+
+                            <!-- Card Body2 -->
+                            <div class="card-body">
+
+
+                                <div class="card-body">
+                                    <h2 class="projetsTitre">Quartiers</h2><br>
+
+                                    <table class="table table-sm">
+                                        <thead style="background-color: rgb(228, 238, 248); color: black;">
+                                            <tr>
+                                                <th>Id </th>
+                                                <th>Zone d'intervention </th>
+                                                <th>Latitude</th>
+                                                <th>Longitude</th>
+                                                <th>Image</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                            <tr *ngFor="let quartier of quartiersList">
+                                                <th>{{quartier.IdQuartier}}</th>
+                                                <th>{{quartier.NomQuartier}}</th>
+                                                <th>{{quartier.lat}}</th>
+                                                <th>{{quartier.long}}</th>
+                                                <th> <img [src]="quartier.img" height="200" ></th>
+
+
+                                                <th>
+
+                                                    <button [routerLink]="['/quartier/infos', quartier._id]"
+                                                        class="btn btn-sm btn-consult" style="margin-right:-6px;">
+                                                        <i class="fal fa-eye"></i></button>
+
+
+                                                    <button [routerLink]="['/quartier/update', quartier._id]"
+                                                        class="btn btn-sm btn-warning mx-3">
+                                                        <i class="fa fa-pen"></i>
+                                                    </button>
+
+                                                    <button class="dropdown-item" class="btn btn-sm btn-danger" href="#"
+                                                        data-toggle="modal" data-target="#deleteModal"
+                                                        style="margin-left:-6px;" (click)="deleteRow(quartier)">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </th>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+
+                                    <button routerLink="/quartiers/add" style="margin-left: 630px;"
+                                        class="bouton btn btn-primary btn-sm my-3">
+                                        <i class="fa fa-plus"></i> Ajouter </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir quitter votre session?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body"> Sélectionnez «Déconnexion» ci-dessous si vous êtes prêt à quitter votre session
+                    en cours.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" routerLink="/signin">Deconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir supprimer le quartier?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body"> Sélectionnez «Supprimer» si vous souhaitez retirer ce quartier</div>
+                <div class="modal-footer">
+                    <button id="closeModalButton" data-toggle="modal" data-target="#deleteModal" class="btn btn-default"
+                        data-dismiss="modal">Annuler</button>
+                    <!-- <button  class="btn btn-secondary" type="button" data-dismiss="modal" >Annuler</button> -->
+                    <a class="btn btn-primary" routerLink="/quartiers/list" (click)="delete()">
+                        Supprimer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

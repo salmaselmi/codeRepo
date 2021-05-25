@@ -1,0 +1,154 @@
+<body>
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <div class="sidebar-brand-icon ">
+
+            </div>
+            <div class="sidebar-brand-text mx-3">PRIQH 2</div><br>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active" style="margin-left: 45px;" *ngIf="isAdmin">
+            <a class="nav-link" >
+                <h6 style="font-weight: bolder; color:#ffc74e;" > Espace Admin </h6></a>
+        </li>
+         <li class="nav-item active" style="margin-left: 45px;" *ngIf="isUser">
+            <a class="nav-link" >
+                <h6 style="font-weight: bolder; color:#ffc74e;" > Espace DDIP </h6></a>
+        </li>
+        <!-- Divider -->
+
+        <hr class="sidebar-divider my-0">
+        <!-- Heading -->
+
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <!-- Nav Item - Dashboard -->
+
+        <li class="nav-item active" >
+            <a class="nav-link" routerLink="/dashboard">
+                <i class="fas fa-home fa-sm fa-fw mr-2"></i>
+                <span> Accueil </span></a>
+        </li>
+        <!-- DDIP -->
+        <li class="nav-item active" >
+
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-user-hard-hat"></i>
+                <span>Identification et géo-<br>localisation des projets </span>
+            </a>
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <strong>
+                        <a class="collapse-item" routerLink="/projects/identify"> Projets </a>
+                        <a class="collapse-item" routerLink="/gouvernorats/list"> Gouvernorats </a>
+                        <a class="collapse-item" routerLink="/communes/list"> Communes </a>
+                        <a class="collapse-item" routerLink="/quartiers/list"> Quartiers </a>
+
+                    </strong>
+
+
+                </div>
+            </div>
+        </li>
+
+        <!--Partie Direction Financiere et Comptable et controle gest-->
+        <li class="nav-item active" *ngIf="isAdmin">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-money-check-alt"></i>
+
+                <span>Financement</span>
+            </a>
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <strong>
+
+                        <a class="collapse-item" routerLink="/projects/list">Décomptes </a>
+                        <a class="collapse-item" routerLink="/projects/list">Factures </a>
+                        <a class="collapse-item" routerLink="/bailleurs">Bailleurs de fonds </a>
+                        <a class="collapse-item" routerLink="/schemas/fin">Schémas <br> De Financements </a>
+
+                    </strong>
+
+                </div>
+            </div>
+        </li>
+        <!-- fin partie Direction Financiere et Comptable -->
+
+        <!-- Partie Direction Des Travaux-->
+        <li class="nav-item active" *ngIf="isAdmin">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-user-hard-hat"></i>
+                <span> Travaux </span>
+            </a>
+
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <strong>
+
+                        <a class="collapse-item" routerLink="/projects/list"> Etat d'avancement </a>
+                        <a class="collapse-item" routerLink="/clients/list"> Documents et ordres <br> de services </a>
+
+                    </strong>
+
+
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+</body>
+<!-- fin partie Direction des travaux-->
+
+
+
+
+<!-- <li class="nav-item active">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            aria-expanded="true" aria-controls="collapseUtilities" >
+            <i class="fas fa-user-hard-hat"></i>
+            <span>Identification et <br> géolocalisation <br>des projets  </span>
+        </a>
+
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded"><strong>
+                    <a class="collapse-item" routerLink="/projects/identify">Projets </a>
+                    <a class="collapse-item" routerLink="/clients/list">Gouvernorats</a>
+                    <a class="collapse-item" routerLink="/categories/list">Quartiers </a>
+                    <a class="collapse-item" routerLink="/products/list">Communes</a>
+
+
+                </strong>
+
+
+            </div>
+        </div>
+    </li>
+     fin partie DDIP-->
+
+
+
+
+
+
+<!-- Divider -->
+<!--
+    <li class="nav-item active">
+        <a class="nav-link" routerLink="/products/list">
+            <i class="fab fa-product-hunt fa-sm fa-fw mr-2"></i>
+            <span>Produits et Service</span></a>
+    </li>
+
+</ul>
+  fin prod-->

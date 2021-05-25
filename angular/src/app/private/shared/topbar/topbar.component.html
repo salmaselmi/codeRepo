@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+
+    <!-- Topbar Navbar -->
+    <div class="navbar-nav ">
+        <img class="img1" src="/assets/images/AFDlogo.png" /><br>
+        <img class="img2" src="/assets/images/eu_flag.jpg" /><br>
+        <img class="img3" src="/assets/images/logo_bei.png" /><br>
+        <img class="logo_top" src="/assets/images/logoarru.png" width="70px" />
+    </div>
+    <ul class="navbar-nav ml-auto ">
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow" *ngIf="isAdmin" >
+            <a class="nav-link" role="button" routerLink="/user/param">
+                <i class="fas fa-users" style="font-size: 1.4rem; color: rgb(35, 102, 156); margin-right: -10px; "></i>
+            </a>
+        </li> 
+
+         <!-- Nav Item - Logout --> 
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link " role="button"  href="/signin" data-toggle="modal" data-target="#logoutModal" >
+                 <i class="fas fa-sign-out-alt" style="font-size: 1.4rem; color: rgb(35, 102, 156); margin-right: -17px; "></i> 
+            </a>
+             
+        </li>
+
+    </ul>
+
+</nav>

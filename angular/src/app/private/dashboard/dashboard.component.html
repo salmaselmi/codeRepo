@@ -1,0 +1,179 @@
+<!-- Page Wrapper -->
+<div id="wrapper" >
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" >
+        <!-- Topbar -->
+        <app-topbar></app-topbar>
+        <!-- End of Topbar -->
+        <!-- Page Heading -->
+    <div class="cover" ></div>
+    <div > 
+        <img class="super" src="/assets/images/PRIQH2.png"  > 
+        </div>
+        <!-- Begin Page Content -->
+        <div class="container-fluid" class="arriere">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4"> 
+ 
+ 
+               <h1 class="h3 mb-0  " style="margin-left:40px; margin-top: 40px;color: rgb(0, 46, 88);">Bienvenue  Salma ,</h1>  
+
+            </div>
+
+
+
+             
+             <!-- Content Row -->
+
+
+           <div class="row" >
+ 
+                <div class="card"
+                    style="width: 30rem;padding-top: 170px;color:rgb(1, 1, 58); margin-left:50px;margin-top:20px;">
+
+                    <div class="card-profil">
+                        <div _ngcontent-kgv-c53="" class="user_image">
+                            <div _ngcontent-kgv-c53="" class="avatar"><img _ngcontent-kgv-c53="" alt=""
+                                    class="rounded-circle" src="/assets/images/User.jpg">
+                                <div _ngcontent-kgv-c53="" class="icon-wrapper"><i _ngcontent-kgv-c53=""
+                                        class="icofont icofont-pencil-alt-5"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div _ngcontent-kgv-c53="" class="centrer profil-details">
+                        <h4 _ngcontent-kgv-c53=""> Nom Prenom </h4>
+                        <h6 _ngcontent-kgv-c53="">Rôle </h6>
+
+                    </div>
+                    <div _ngcontent-kgv-c53="" class="card-footer row">
+                        <div _ngcontent-kgv-c53="" class="col-6 col-sm-6">
+                            <h6 _ngcontent-kgv-c53=""> <i class="fas fa-user-hard-hat"></i> <b> Fonctionnalité </b></h6>
+                            <h6 _ngcontent-kgv-c53="">Gestion des droits d'acces</h6>
+                        </div>
+                        <div _ngcontent-kgv-c53="" class="col-6 col-sm-6">
+                            <h6 _ngcontent-kgv-c53=""><i _ngcontent-kgv-c53="" class="fa fa-phone"></i> Telephone
+                            </h6>
+                            <h6 _ngcontent-kgv-c53="">+21698786134</h6>
+                        </div>
+                    </div>
+                    <div _ngcontent-kgv-c53="" class="card-footer row">
+                        <div _ngcontent-kgv-c53="" class="col-6 col-sm-6">
+                            <h6><i class="fas fa-user"></i> Dernière Connexion</h6>
+                            <h6 _ngcontent-kgv-c53="" class="counter" > 09/04/2021 , 9h30</h6>
+                        </div>
+                        <div _ngcontent-kgv-c53="" class="col-6 col-sm-6">
+                            <h6><i class="fas fa-user"></i> Deconnexion </h6>
+                            <h6 _ngcontent-kgv-c53=""> 09/04/2021 , 12h </h6>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <!-- Pie Chart -->
+                <div class="col">
+                    <div class="card h-77" style="width: 33rem;margin-top: -530px;border: 1px solid rgb(224, 230, 243);margin-left:550px;">
+
+                        <!-- Card Body -->
+                
+                        <br>
+                        <h6 style="padding-left: 20px;" class="m-0 font-weight-bold " style="color: rgb(35, 102, 156);">
+                            <i class="far fa-user-lock " style="font-size: 1.4rem; color: rgb(35, 102, 156); width: 2rem;"></i> CHANGER MOT DE PASSE</h6>
+                        <br>
+                        <div class="card-body">
+                            <form class="user" [formGroup]="dashboardForm" class="user" (ngSubmit)="dashboardUser()">
+                                <div class="form-group row">
+                                    <div class="col mb-3 mb-sm-0">
+                                        <label for="act">Mot de passe actuel</label><input type="text"
+                                            formControlName="act" class="form-control" id="exampleact" size="25">
+                                        <div *ngIf="act.touched && act.invalid" class="text-danger">
+                                            <div *ngIf="act.errors.required">
+                                                <small> Mot de passe obligatoire</small>
+                                            </div>
+                                            
+                
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-3 mb-sm-0">
+                                        <label for="nouveau">Nouveau mot de passe</label><input type="text"
+                                            formControlName="nouveau" class="form-control" id="examplenouveau"
+                                            size="25">
+                                        <div *ngIf="nouveau.touched && nouveau.invalid" class="text-danger">
+                                            <div *ngIf="nouveau.errors.required">
+                                                <small>Nouveau mot de passe obligatoire</small>
+                                            </div>
+                                          
+                                             
+                
+                                        </div>
+                
+                                    </div>
+                                </div>
+                
+                                <div class="form-group row">
+                                    <div class="col mb-3 mb-sm-0">
+                                        <label for="conf">Confirmer mot de passe</label><input type="text"
+                                            formControlName="conf" class="form-control" id="exampleconf" size="25">
+                                        <div *ngIf="conf.touched && conf.invalid" class="text-danger">
+                                            <div *ngIf="conf.errors.required">
+                                                <small>La confirmation du mot de passe est obligatoire</small>
+                                            </div>
+                
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-3 mb-sm-0">
+                                        <button [disabled]="dashboardForm.invalid" type="submit"
+                                            class="btn btn-success btn-block " style="background-color:rgb(4, 58, 102);">
+                                            Changer
+                                        </button>
+                
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"> Sûr de vouloir quitter votre session?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body"> Sélectionnez «Déconnexion» ci-dessous si vous êtes prêt à quitter votre
+                            session en cours.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                            <a class="btn btn-primary" routerLink="/signin">Deconnexion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="sticky-footer foot" style="margin-top: 100px; margin-left: -90px; width:1500px; height:150px;  " >
+                <div class="copyright my-auto"  > <span style="margin-left:650px; color: white;">Copyright &copy; Your Website 2021</span>
+                    
+                </div>
+            </footer>
+        </div>
+        <!-- End of Footer -->
+    </div>
+</div>

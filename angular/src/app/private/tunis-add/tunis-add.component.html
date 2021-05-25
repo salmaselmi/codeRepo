@@ -1,0 +1,334 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Ajouter Projet</h1>
+
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown --> 
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Infos projet</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+
+                                <form [formGroup]="tunisAddForm" (ngSubmit)="projetsUser()">
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="Id"> Id </label>
+                                            <input type="text" formControlName="Id" class="form-control"
+                                                  id="exampleId" >
+                                            <div *ngIf="Id.touched && Id.invalid" class="text-danger">
+                                                <div *ngIf="Id.errors.required">
+                                                    <small>* Id obligatoire</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="gouvernorat">Gouvernorat</label>
+                                            <select formControlName="gouvernorat" class="form-control "
+                                                 id="examplegouvernorat">
+                                                <option selected="selected">Tunis</option> 
+
+                                            </select>
+                                            <div *ngIf="gouvernorat.touched && gouvernorat.invalid" class="text-danger">
+                                                <div *ngIf="gouvernorat.errors.required">
+                                                    <small>* Gouvernorat obligatoire</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0"> 
+                                            <label for="Commune">Commune</label>
+                                            <select formControlName="Commune" 
+                                               class="form-control " id="exampleCommune">
+                                                <option value="0">Sidi Hsin</option>
+                                                <option value="1">Sijoumi</option>
+                                                <option value="2">Hrairia</option>
+                                                <option value="3">Ezzouhour</option>
+                                                <option value="4">Le Bardo</option>
+                                                <option value="5">Beb Saadoun</option>
+                                                <option value="6">El Omrane</option>
+                                                <option value="7">Bab el Asal</option>
+                                                <option value="8">Bab el Khadhra</option>
+                                                <option value="9">Bab Bhar</option>
+                                                <option value="10">Bab Alioua</option>
+                                                <option value="11">Cite el Khadhra</option>
+                                                <option value="12">El Menzah</option>
+                                                <option value="13">Lac de Tunis</option>
+                                                <option value="14">El Marsa</option>
+                                                <option value="15">La Goulette</option>
+                                                <option value="16">Carthage</option>
+                                                <option value="17">El Battan</option>
+                                                <option value="18">Tebourba</option>
+                                                <option value="19">Borj el Amri</option>
+                                                <option value="20">El Mornaguia</option>
+                                                <option value="21">Oued Ellil</option>
+                                                <option value="22">Djedaida</option>
+                                                <option value="23">Manouba</option>
+                                                <option value="24">Douar Hicher</option>
+
+                                            </select>
+                                            <div *ngIf="Commune.touched && Commune.invalid" class="text-danger">
+                                                <div *ngIf="Commune.errors.required">
+                                                    <small>* Commune obligatoire</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="Nb_maisons">Nb_maisons</label>
+                                            <input  type="text" formControlName="Nb_maisons" class="form-control "
+                                                  id="exampleNb_maisons">
+                                            <div *ngIf="Nb_maisons.touched && Nb_maisons.invalid" class="text-danger">
+                                                <div *ngIf="Nb_maisons.errors.required">
+                                                    <small>* Nb_maisons Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="Nb_quartiers">Nb_quartiers</label>
+                                            <input type="text" formControlName="Nb_quartiers" class="form-control"
+                                               id="exampleNb_quartiers" >
+                                            <div *ngIf="Nb_quartiers.touched && Nb_quartiers.invalid"
+                                                class="text-danger">
+                                                <div *ngIf="Nb_quartiers.errors.required">
+                                                    <small>* Nb_quartiers Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="Nb_habitants">Nb_habitants</label>
+                                            <input type="text" formControlName="Nb_habitants" class="form-control "
+                                                 id="exampleNb_habitants" >
+                                            <div *ngIf="Nb_habitants.touched && Nb_habitants.invalid" class="text-danger">
+                                                <div *ngIf="Nb_habitants.errors.required">
+                                                    <small>* Nb_habitants Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="superficie_quartier">Superficie quartier</label>
+                                            <input  type="text" formControlName="superficie_quartier" class="form-control "
+                                                  id="examplesuperficie_quartier">
+                                            <div *ngIf="superficie_quartier.touched && superficie_quartier.invalid" class="text-danger">
+                                                <div *ngIf="superficie_quartier.errors.required">
+                                                    <small>* Superficie quartier Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>   <div class="form-group row">
+
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="superficie_quartier_couvert">Superficie quartier couvert</label>
+                                            <input  type="text" formControlName="superficie_quartier_couvert" class="form-control "
+                                                  id="examplesuperficie_quartier_couvert" >
+                                            <div *ngIf="superficie_quartier_couvert.touched && superficie_quartier_couvert.invalid" class="text-danger">
+                                                <div *ngIf="superficie_quartier_couvert.errors.required">
+                                                    <small>* Superficie quartier couvert Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>   <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="rapport_superficie">Rapport superficie</label>
+                                            <input  type="text" formControlName="rapport_superficie" class="form-control "
+                                                  id="examplerapport_superficie" >
+                                            <div *ngIf="rapport_superficie.touched && rapport_superficie.invalid" class="text-danger">
+                                                <div *ngIf="rapport_superficie.errors.required">
+                                                    <small>* Rapport superficie Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="taux_habitation">Taux d'habitation </label>
+                                            <input  type="text" formControlName="taux_habitation" class="form-control "
+                                                  id="exampletaux_habitation" >
+                                            <div *ngIf="taux_habitation.touched && taux_habitation.invalid" class="text-danger">
+                                                <div *ngIf="taux_habitation.errors.required">
+                                                    <small>* Taux d'habitation  Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="rapport_depense_maison">Rapport de depense par maison </label>
+                                            <input  type="text" formControlName="rapport_depense_maison" class="form-control "
+                                                  id="examplerapport_depense_maison" >
+                                            <div *ngIf="rapport_depense_maison.touched && rapport_depense_maison.invalid" class="text-danger">
+                                                <div *ngIf="rapport_depense_maison.errors.required">
+                                                    <small>* Rapport de depense par maison Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div><div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="composante_projet">Composantes projet</label>
+                                            <input  type="text" formControlName="composante_projet" class="form-control "
+                                                  id="examplecomposante_projet" >
+                                            <div *ngIf="composante_projet.touched && composante_projet.invalid" class="text-danger">
+                                                <div *ngIf="composante_projet.errors.required">
+                                                    <small>* Composantes projet Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div><div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="voiries_cout"> Voiries cout </label>
+                                            <input  type="text" formControlName="voiries_cout" class="form-control "
+                                                  id="examplevoiries_cout" >
+                                            <div *ngIf="voiries_cout.touched && voiries_cout.invalid" class="text-danger">
+                                                <div *ngIf="voiries_cout.errors.required">
+                                                    <small>* Voiries cout Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div><div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="voiries_taux">Voiries taux </label>
+                                            <input  type="text" formControlName="voiries_taux" class="form-control "
+                                                  id="examplevoiries_taux">
+                                            <div *ngIf="voiries_taux.touched && voiries_taux.invalid" class="text-danger">
+                                                <div *ngIf="voiries_taux.errors.required">
+                                                    <small>* Voiries taux  Obligatoire</small>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label for="Voiries_qte">Voiries qte</label>
+                                            <input type="text" formControlName="Voiries_qte" class="form-control"
+                                                  id="exampleVoiries_qte">
+                                            <div *ngIf="Voiries_qte.touched && Voiries_qte.invalid" class="text-danger">
+                                                <div *ngIf="Voiries_qte.errors.required">
+                                                    <small>* Voiries_qte Obligatoire</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                       <div class="col mb-3 mb-sm-0" >
+                                           <button [disabled]="tunisAddForm.invalid" type="submit" class="btn  btn-info"  > 
+                                                <i class="fa fa-plus"></i> Ajouter
+                                            </button>
+                                        </div>
+                                    </div>  
+
+                              
+                                    
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Sur de vouloir quitter votre session?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"> Sélectionnez «Déconnexion» ci-dessous si vous êtes prêt à quitter votre session en
+                cours.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-primary" routerLink="/signin">Deconnexion</a>
+            </div>
+        </div>
+    </div>
+</div>
